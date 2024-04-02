@@ -1,6 +1,6 @@
 const axios = require('axios');
 const OpenAI = require('openai');
-
+require('dotenv').config();
 const express = require("express");
 const mysql = require('mysql');
 const bcrypt = require('bcrypt');
