@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%- include("partials/head.ejs") %>
+</head>
+<body>
+  <%- include("partials/nav.ejs") %>
+  <h1> Add Songs </h1>
+
+  <br><br>  
+    
+  <form id="main" action="/addSongs" method="POST">
+  
+  <br>
+  <label>
+    Song title:
+  <input type="text" class="songsBox"id="songSearch" name="songSearch" placeholder="Enter song name">
+  </label>
+    
+  <br>
+  <br>
+    
+  <label>
+    Genre:
+    <input type="text" class="songsBox" id="songGenre" name="songGenre" placeholder="Enter song Genre" >
+  </label>
+    
+  <br>
+    
+  <label>  
+  <span id="songSearchError"></span>
+  </label>
+    
+  <br>
+  <br>
+    
+  <button class="btn btn-dark" type="submit" id="getSongButton">Add Song</button>
+    
+  <br>
+  </form>
+
+  
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

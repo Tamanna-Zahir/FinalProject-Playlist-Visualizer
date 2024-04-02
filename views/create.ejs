@@ -1,0 +1,80 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <%- include("partials/head.ejs") %>
+  </head>
+    
+  <body>
+    
+  <%- include("partials/nav.ejs") %>
+    
+  <h1>Create Playlist</h1>
+    
+  <br>
+  <br>
+    
+  <form id="main" action="/create" method="POST">
+    
+    <label>
+      1. Write the name for your playlist.
+      <br>
+      <input type="text" id="playlistNameId" name="playlistName">
+      <br>
+      <span id="playlistNameError"></span>
+    </label>
+  
+    <br>
+    <br>
+    <label>
+      2. Click the button to generate an AI generated image based on the playlist name.
+      <br>
+      <button type="button" class="btn btn-dark" id="getImageButton">Get Image</button>
+      <br>
+      <br>
+      <div id="imageContainer"></div>
+    </label>
+    
+    <br>
+    <br>
+
+      <button class="btn btn-dark" type="submit">Create Playlist</button>
+    
+  </form>
+    
+  <%- include("partials/footer.ejs") %>
+    
+  <!-- <script>
+    document.getElementById('getImageButton').addEventListener('click', async function () {
+      const songSearch = document.getElementById('playlistNameId').value;
+
+      const response = await fetch('/getImage', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ songSearch: songSearch }),
+      });
+
+      const data = await response.json();
+      if (data.imageUrl) {
+        document.getElementById('imageContainer').innerHTML = '<img src="' + data.imageUrl + '" alt="Generated Image" style="width: 500px; height: 300px; border: 3px solid black;">';
+      }
+    });
+    
+    document.getElementById('main').addEventListener('submit', function (event) {
+      const pname = document.getElementById('playlistNameId').value;
+      const errorSpan = document.getElementById('playlistNameError');
+
+      if (pname.trim() === '') {
+        errorSpan.textContent = 'Please write the playlist name';
+        event.preventDefault();
+        errorSpan.style.color = 'red';
+      } else {
+        errorSpan.textContent = '';
+      }
+    });
+  </script> -->
+    <script src="js/playlistNameValidation.js"></script>
+
+  </body>
+  </html>

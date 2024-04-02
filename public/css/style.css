@@ -1,0 +1,150 @@
+body{
+  text-align:center;
+  background-color:#BFCCB5;
+ 
+}
+.welcomeH1{
+  font-size: 55px;
+}
+
+
+#loginBox{
+  background-color: #7C96AB; 
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 10vh;
+  
+}
+
+
+
+.inputBox{
+  border-radius: 10px; 
+  padding: 10px
+  width: 200px; 
+  height: 30px;
+}
+
+#playlistNameId{
+  border-radius: 10px; 
+  padding: 10px
+  width: 200px; 
+  height: 30px;
+}
+
+.songsBox{
+  border-radius: 10px; 
+  padding: 10px
+  width: 200px; 
+  height: 30px;
+}
+
+#div1Text{
+  background-color:#AEC2B6; 
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 400px;
+  border: 2px solid black;
+}
+
+#welcomeH1{
+  color: #333;
+  font-family: 'Arial', sans-serif; 
+  font-size: 40px;
+  font-weight: bold; 
+  text-align: center; 
+  margin-bottom: 20px; 
+
+}
+
+h1{
+  color: black;
+  background-color: white;
+  text-align: center;
+  width:50%;
+  border-radius: 50px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  /* aligns block element */
+
+  /* text box details */
+  padding: 10px;
+  border: 5px solid black;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.container {
+  display:flex; justify-content:center;
+}
+
+.div1, .div2 {
+  padding: 10px;
+
+}
+
+.div1{
+  width: 30%;
+}
+
+
+#aiImage{
+  border-radius:50px;
+  width:400px;
+  height:350px;
+}
+
+#homeh3{
+  color: #333;
+  font-family: 'Arial', sans-serif; 
+  font-size: 20px;
+  font-weight: bold; 
+  text-align: center; 
+  margin-bottom: 20px;
+}
+
+a{
+  color:black;
+  text-decoration: none;
+}
+
+footer{
+  margin-top: 19%;
+  text-align: center;
+  font-size: 70%;
+  color: white;
+}
+
+
+#logo{
+  width: 200px;
+  length: 200px;
+}
+#logoImg{
+background-color: #1d1b1b;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+  margin-left: 10%;
+   
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+

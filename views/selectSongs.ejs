@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+  <%- include("partials/head.ejs") %>
+</head>
+<body>
+  <%- include("partials/nav.ejs") %>
+
+  <h1>Select Songs for you playlist</h1>
+
+
+    
+      <br>
+    <!-- <form id="main" action="/addSong" method="POST">
+        <label>
+            Search for Songs:
+            <br>
+            <input type="text" id="songSearch" name="songSearch">
+            <br>
+            <span id="songSearchError"></span>
+        </label>
+        <br>
+        <br>
+        <button type="submit" id="getSongButton">Get Song</button>
+        <br>
+    </form> -->
+  
+    
+  <form id="main" action="/selectSongs" method="POST">
+
+  <label>  
+    Select all songs for your playlist:
+    <br>
+      <table>
+      <tr>
+      <th>Song Name</th>
+      <th>Artist</th>
+      <th>Release Date</th>
+      <th>Add to playlist</th>
+      </tr>
+      <% for (const song of songs) { %>
+      <tr>
+      <td><%= song.title %></td>
+      <td><%= song.artist %></td>
+      <td><%= song.genre %></td>
+      <td>
+        
+  <label>
+      <input type="checkbox" name="selectedSongs[]" value="<%= song.songId %>">
+  </label>
+        
+  </td>
+  </tr>
+        
+  <% } %>
+    
+  </table>
+  </label>
+  <br>
+  <br>
+  <button   class="btn btn-dark" type="submit">Add Songs</button>
+  </form>
+
+  <%- include("partials/footer.ejs") %>
+    
+</body>
+</html>

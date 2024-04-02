@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+  <%- include("partials/head.ejs") %>
+
+</head>
+<body>
+  <%- include("partials/nav.ejs") %>
+
+  <div id="homeBox">
+  <h1 class="welcomeH1">Art-ify</h1>
+    <br>
+  </div>  
+
+
+  <h3 id="homeh3">In this website, you can create you own playlist and generate an image based off of it!</h3>
+
+  <div class="container">
+  <div class="div1">
+  <h5><p id="div1Text">Click on: <br>"Create Playlist" to make your own playlist <br><br> "Community Playlist" to check out playlists made by all users <br><br> "My Playlists" to look at logged in user playlist</p></h5>
+
+    <br>
+    <h5 > To the right is an example of an image generated from a playlist!</h5>
+  </div>
+
+  <div class="div2"> 
+    
+    <img  style=" border: 3px solid black;" id="aiImage" src="img/aitemp21.png" alt="temp">
+
+  </div>
+  </div> 
+    
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

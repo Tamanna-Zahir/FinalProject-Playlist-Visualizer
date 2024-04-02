@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Playlist Page</title>
+  <%- include("partials/head.ejs") %>
+
+</head>
+<body>
+  <%- include("partials/nav.ejs") %>
+
+  <h1>Update Song</h1>
+
+    <form action="/updateSong" method="POST" autocomplete="off">
+
+
+      <input type="hidden" name="songId" 
+        value="<%= songInfo.songId%>">
+      
+
+      Song Title: 
+      <input type="text" name = "songTitle" value="<%= songInfo.title%>">
+
+      <br><br>
+
+      Song Artist:
+      <input type="text" name="songArtist" value ="<%= songInfo.artist%>">
+
+      <br><br>
+
+      Song Genre:
+      <input type="text" name="songGenre" value="<%= songInfo.genre%>">
+
+      <br><br>
+
+       Author:   
+      <select name="playlistId">
+
+        <% for (i of playlist) { %>
+
+        <option 
+          <%= (songInfo.playlistId == i.playlistId)?"selected":""%>
+          value="<%= i.playlistId%>"> 
+          <%=i.name%> </option>
+
+           <% } %>
+      </select>
+
+      <br><br>
+
+      <button>Update Song</button>
+    </form>
+
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<%- include("partials/head.ejs") %>
+</head>
+
+<body>
+<%- include("partials/nav.ejs") %>
+<h1>My Playlist </h1>
+
+ <br><br> 
+
+<table>
+  <tr>
+    <th>Playlist Name </th>
+    <th>Image</th>
+    <th>Update/Delete</th>
+  </tr>
+  <% for (const playlist of playlists) { %>
+
+  <tr>
+
+    <td><a href="/mySongs/<%= playlist.playlistId %>"><div class="playlistName"><%= playlist.name %> </div></a></td>
+    <td>
+      <button type="button" class="btn btn-success" class="getImageButton">Visualize</button>
+     
+      <br>
+      <div class="imageContainer"></div>
+    </td>
+    <td><button type="button" class="btn btn-warning" ><a href="/updatePlaylist?playlistId=<%=playlist.playlistId %>">Update</a></button>
+      <button type="button" class="btn btn-danger"><a href="/deletePlaylist?playlistId=<%=playlist.playlistId %>">Delete</a></button></td>
+  </tr>
+  <% } %>
+</table>
+
+<%- include("partials/footer.ejs") %>
+
+<script>
+  // Use document.querySelectorAll to get all elements with the specified class
+  const getImageButtons = document.querySelectorAll('.getImageButton');
+
+  // Iterate over each button and attach an event listener
+  getImageButtons.forEach(button => {
+    button.addEventListener('click', async function () {
+      // Get the corresponding playlist name for the clicked button
+      const playlistName = button.closest('tr').querySelector('.playlistName').innerText;
+
+      const response = await fetch('/getImage', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          songSearch: playlistName
+        }), // Use playlistName instead of songSearch
+      });
+
+      const data = await response.json();
+
+      if (data.imageUrl) {
+        // Find the corresponding image container for the clicked button
+        const imageContainer = button.closest('tr').querySelector('.imageContainer');
+        imageContainer.innerHTML = '<img src="' + data.imageUrl + '" alt="Generated Image" style="width: 500px; height: 300px; border: 3px solid black;">';
+      }
+    });
+  });
+</script>
+</body>
+
+</html>

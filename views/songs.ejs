@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%- include("partials/head.ejs") %>
+</head>
+<body>
+  <%- include("partials/nav.ejs") %>
+  <h1> <%= songs[0].name %> </h1>
+    
+    <Table>
+      <tr>
+        <th>Song Name</th>
+        <th>Artist</th>
+        <th>Genre</th>
+      </tr>
+         <% for (const song of songs) { %>
+      <tr>
+        <td><%= song.title %></td>
+        <td><%= song.artist %></td>
+        <td><%= song.genre %></td>
+
+      </tr>
+      <% } %>
+    </Table>
+       
+
+
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

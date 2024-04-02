@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Playlist Page</title>
+  <%- include("partials/head.ejs") %>
+
+</head>
+<body>
+  <%- include("partials/nav.ejs") %>
+
+  <h1>Update Playlist</h1>
+
+    <form action="/updatePlaylist" method="POST" autocomplete="off">
+
+      <input type="hidden" name="playlistId" 
+        value="<%= playlistInfo.playlistId%>">
+      
+      Playlist Name: 
+      <input type="text" name = "playlistName" value="<%= playlistInfo.name%>">
+
+      <br><br>
+      
+      ImageUrl:
+      <textarea name="playlistImage"><%= playlistInfo.image%></textarea>
+
+      <br><br>
+      
+      <button>Update Playlist</button>
+    </form>
+
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>
