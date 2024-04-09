@@ -170,7 +170,7 @@ app.post('/api/login', async (req, res) => {
   const match = await bcrypt.compare(password, hashedPwd);
 
   currentLoginId = rows[0].adminId;
-  
+  console.log(currentLoginId)
   if (match) {
     req.session.authenticated = true;
     res.send({ "authenticated": true });
